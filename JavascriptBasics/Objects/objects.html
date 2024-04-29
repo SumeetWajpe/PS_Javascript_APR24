@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //1. using object literal syntax
+      var person = {
+        name: "Federer",
+        country: "Switzerland",
+        age: 41,
+        hasRetired: true,
+        getDetails: function () {
+          console.log("The player " + this.name + " lives in " + this.country);
+        },
+      };
+
+      person.getDetails();
+      var personOne = person;
+      personOne.name = "Roger Federer";
+    </script>
+  </head>
+  <body></body>
+</html>
