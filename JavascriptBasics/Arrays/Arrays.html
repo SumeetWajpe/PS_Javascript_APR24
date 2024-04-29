@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   var cars = ["BMW", "AUDI", "MERC"];
+      //   // OR
+      //   var carsObj = new Array("TATA", "MAHINDRA");
+
+      //   var carsObj = new Array(1); // if parameter is number then its the length of the array
+
+      //   carsObj[0] = 10;
+      //   carsObj[1] = "20";
+
+      var cars = ["bmw", "audi", "merc"];
+      // slow
+      //   cars.forEach(function (car) {
+      //     console.log(car);
+      //   });
+
+      // ES5 - better that for (no need to manage index)
+      //   for (const key in cars) {
+      //     console.log(cars[key]);
+      //   }
+      // ES6 - best
+      //   for (const car of cars) {
+      //     console.log(car);
+      //   }
+      //   console.log(cars);
+
+      // Methods
+      //   var filteredCars = cars.filter(function (car) {
+      //     if (car == "bmw") return false;
+      //     else return true;
+      //   });
+
+      //   var carBMW = cars.find(function (car) {
+      //     if (car == "bmw") return true;
+      //     else return false;
+      //   });
+
+      //   var index = cars.findIndex(function (car) {
+      //     if (car == "audi") return true;
+      //   });
+
+      var capsCars = cars.map(function (car) {
+        return car.toUpperCase();
+      });
+
+      cars.push("honda");
+      console.log(cars.pop());
+      
+    </script>
+  </head>
+  <body></body>
+</html>
