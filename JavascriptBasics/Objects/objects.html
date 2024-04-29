@@ -16,9 +16,14 @@
         },
       };
 
-      person.getDetails();
-      var personOne = person;
-      personOne.name = "Roger Federer";
+      //   person.getDetails();
+      //   var personOne = person;
+      //   personOne.name = "Roger Federer";
+
+      // JSON
+      var JSONPerson = JSON.stringify(person);
+
+      var jsObject = JSON.parse(JSONPerson);
     </script>
   </head>
   <body></body>
