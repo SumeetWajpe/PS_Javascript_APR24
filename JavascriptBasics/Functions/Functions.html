@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //1. Function declaration syntax
+      function Add(x, y) {
+        return x + y;
+      }
+      //   var result = Add(10, 20);
+
+      //   console.log("The addition is : " + result);
+
+      // 2. Function as an expression
+
+      //   var Add = function (x, y) {
+      //     return x + y;
+      //   };
+      //   var result = Add(10, 20); // Add is not defined !
+
+      //   console.log("The addition is : " + result);
+
+      // **Special case (trying to use Add before it is defined)
+
+      //   console.log(Add); // undefined
+      //   var result = Add(10, 20); // Add is not defined !
+
+      //   var Add = function (x, y) {
+      //     return x + y;
+      //   };
+      //   console.log("The addition is : " + result);
+
+      //3. using Function Constructor/Object
+
+    //     var Add = new Function("x", "y", "return x + y");
+    //     var result = Add(40, 20); // Add is not defined !
+    //     console.log("The addition is : " + result);
+    // </script>
+  </head>
+  <body></body>
+</html>
