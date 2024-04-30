@@ -24,6 +24,25 @@
       var JSONPerson = JSON.stringify(person);
 
       var jsObject = JSON.parse(JSONPerson);
+
+      // 2. using Object constructor
+      var obj = new Object();
+      obj.name = "XYZ";
+      obj.city = "pqr";
+
+      // 3. using Custom Constructor
+
+      function Emp() {
+        this.salary = 200000;
+        this.getSalary = function () {
+          console.log("The salary is : " + this.salary);
+        };
+      }
+
+      var emp = new Emp();
+      emp.getSalary();
+
+      let x = 100;
     </script>
   </head>
   <body></body>
