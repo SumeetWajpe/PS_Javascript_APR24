@@ -13,18 +13,46 @@
       //   }
 
       // ES6 - Default parameters
-      function Add(x = 0, y = 0) {
-        return x + y;
-      }
+      //   function Add(x = 0, y = 0) {
+      //     return x + y;
+      //   }
 
-      console.log(Add());
+      //   console.log(Add());
 
-      function printBook(title = "unknown", author = "unknown", type = "b&w") {
-        console.log(title, author, type);
-      }
+      //   function printBook(title = "unknown", author = "unknown", type = "b&w") {
+      //     console.log(title, author, type);
+      //   }
 
-      printBook();
-      printBook("Wings Of Fire", "Dr. APJ Abdul Kalam");
+      //   printBook(undefined, undefined, "orange");
+      //   printBook("Wings Of Fire", "Dr. APJ Abdul Kalam");
+
+      // Rest Parameters
+      //   function printBook(author, ...titles) {
+      //     console.log(author, titles);
+      //   }
+
+      //   printBook("Dr. APJ Abdul Kalam", "Wings Of Fire", "India 2020");
+
+      //   var printBook = function (author, ...titles) {
+      //     console.log(author, titles);
+      //   };
+
+      // Arrow Functions
+      var printBook = (author, titles) => {
+        console.log(author, titles);
+      };
+
+      printBook("Dr. APJ Abdul Kalam", "Wings Of Fire", "India 2020");
+
+      let cars = ["BMW", "AUDI", "FERRARI"];
+      cars.forEach(function (car) {
+        console.log(car);
+      });
+      // OR
+
+      cars.forEach((car, index) => {
+        console.log(index + 1 + "." + car);
+      });
     </script>
   </head>
   <body></body>
