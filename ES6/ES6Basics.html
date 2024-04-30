@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Defines block scoped variables
+      //   if (true) {
+      //     let x = 100; // block level
+      //   }
+      //   console.log(x);
+
+      // Error - As let stops hoisting
+      //   console.log(x);
+      //   let x;
+
+      // Error -  Identifier 'x' has already been declared
+      //   let x = 100;
+      // let x = 200;
+
+      // const
+      //   const PI = 3.14; // block scoped
+      //   PI = 3.14534; // Error -  Assignment to constant variable.
+      // const PI; // Error  - Missing initializer in const declaration
+      // PI = 3.14;
+
+      // Spread Operator - Can work with arrays & objects
+
+      // Arrays
+      //   let cars = ["BMW", "AUDI", "FERRARI"];
+      //   let moreCars = ["TATA", "MARUTI", 100, true];
+
+      //   let allCars = [...cars, ...moreCars, "Honda"];
+
+      // Objects
+      let person = {
+        name: "Federer",
+        country: "Switzerland",
+        age: 41,
+        sport: "Tennis",
+      };
+
+      let stats = {
+        wasWorldNoOne: true,
+        titlesWon: 21,
+      };
+
+      let player = { ...person, ...stats, sport: "Lawn Tennis" };
+
+      //   let shape = { length: 10, breadth: 10 };
+      //   let rect = { ...shape, isSquare: true };
+    </script>
+  </head>
+  <body></body>
+</html>

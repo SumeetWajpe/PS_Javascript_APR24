@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // ES5
+      //   function Add(x, y) {
+      //     x = x || 0;
+      //     y = y || 0;
+      //     return x + y;
+      //   }
+
+      // ES6 - Default parameters
+      function Add(x = 0, y = 0) {
+        return x + y;
+      }
+
+      console.log(Add());
+
+      function printBook(title = "unknown", author = "unknown", type = "b&w") {
+        console.log(title, author, type);
+      }
+
+      printBook();
+      printBook("Wings Of Fire", "Dr. APJ Abdul Kalam");
+    </script>
+  </head>
+  <body></body>
+</html>
