@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
     <script src="GetData.js"></script>
     <script>
       console.log("Started..");
@@ -16,17 +20,18 @@
         for (const post of posts) {
           let newLi = document.createElement("li");
           newLi.innerHTML = post.title;
+          newLi.className = "list-group-item";
           list.appendChild(newLi);
         }
       });
       console.log("Ended..");
     </script>
   </head>
-  <body>
+  <body class="container">
     <header>
       <h1>All posts</h1>
     </header>
     <p id="loader">Loading..</p>
-    <ul id="postList"></ul>
+    <ul id="postList" class="list-group"></ul>
   </body>
 </html>
