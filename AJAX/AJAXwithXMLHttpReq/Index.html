@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="GetData.js"></script>
+    <script>
+      console.log("Started..");
+      GetData(function (posts) {
+        let list = document.getElementById("postList");
+        let loader = document.getElementById("loader");
+        if (posts.length) {
+          loader.style.display = "none";
+        }
+        for (const post of posts) {
+          let newLi = document.createElement("li");
+          newLi.innerHTML = post.title;
+          list.appendChild(newLi);
+        }
+      });
+      console.log("Ended..");
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>All posts</h1>
+    </header>
+    <p id="loader">Loading..</p>
+    <ul id="postList"></ul>
+  </body>
+</html>
