@@ -5,16 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-      let name = "Federer";
-      let country = "Switzerland",
-        age = 41;
+      //   let name = "Federer";
+      //   let country = "Switzerland",
+      //     age = 41;
       //   var person = {
       //     name: name,
       //     country: country,
       //     age: age,
       //   };
       // OR
-      let person = { name, country, age };
+      //   let person = { name, country, age };
+
+      // Destructuring - Arrays & Objects
+      let cars = ["BMW", "AUDI", "HONDA"];
+      //   let firstCar = cars[0];
+      //   let secondCar = cars[1];
+      // OR
+      let [firstCar, secondCar] = [
+        { name: "BMW" },
+        { name: "AUDI" },
+        { name: "HONDA" },
+      ];
+      console.log(firstCar.name);
     </script>
   </head>
   <body></body>
