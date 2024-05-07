@@ -7,21 +7,41 @@
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
 
     <script src="GetData.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    />
     <script>
       // async await - ES7
       async function LoadPosts() {
         try {
+          let list = document.getElementById("postList");
+          let loader = document.getElementById("loader");
+
           let res = await GetData(); // await returns the response (that promise resolves to)
-          console.log(res.data); // this would be executed only if promise returned by getData() resolves
+          loader.style.display = "none";
+          for (const post of res.data) {
+            let newLi = document.createElement("li");
+            newLi.innerHTML = post.title;
+            newLi.className = "list-group-item";
+            list.appendChild(newLi);
+          } // this would be executed only if promise returned by getData() resolves
         } catch (error) {
           console.log(error);
         }
       }
 
-      console.log("Started");
-      LoadPosts();
-      console.log("Ended");
+      document.addEventListener("DOMContentLoaded", LoadPosts);
     </script>
   </head>
-  <body></body>
+  <body class="container">
+    <header>
+      <h1>All posts</h1>
+    </header>
+    <p id="loader">Loading..</p>
+    <p id="errorMsg" class="text-danger" style="display: none">
+      Something went wrong !
+    </p>
+    <ul id="postList" class="list-group"></ul>
+  </body>
 </html>
