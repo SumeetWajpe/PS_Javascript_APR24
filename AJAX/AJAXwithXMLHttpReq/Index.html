@@ -11,17 +11,24 @@
     <script src="GetData.js"></script>
     <script>
       console.log("Started..");
-      GetData(function (posts) {
+      GetData(function (posts, err) {
         let list = document.getElementById("postList");
         let loader = document.getElementById("loader");
-        if (posts.length) {
+        if (!err) {
+          if (posts.length) {
+            loader.style.display = "none";
+          }
+          for (const post of posts) {
+            let newLi = document.createElement("li");
+            newLi.innerHTML = post.title;
+            newLi.className = "list-group-item";
+            list.appendChild(newLi);
+          }
+        } else {
           loader.style.display = "none";
-        }
-        for (const post of posts) {
-          let newLi = document.createElement("li");
-          newLi.innerHTML = post.title;
-          newLi.className = "list-group-item";
-          list.appendChild(newLi);
+          let errorMsg = document.getElementById("errorMsg");
+          errorMsg.innerHTML = err;
+          errorMsg.style.display = "block";
         }
       });
       console.log("Ended..");
@@ -32,6 +39,9 @@
       <h1>All posts</h1>
     </header>
     <p id="loader">Loading..</p>
+    <p id="errorMsg" class="text-danger" style="display: none">
+      Something went wrong !
+    </p>
     <ul id="postList" class="list-group"></ul>
   </body>
 </html>
