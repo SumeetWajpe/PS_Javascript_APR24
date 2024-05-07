@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      fetch("https://jsonplaceholder.typicode.com/postsss")
+        .then(res => {
+          console.log("Within first .then() - success");
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error("Something went wrong !");
+          }
+        })
+        .then(
+          posts => {
+            console.log("Within second .then() - success");
+            console.log(posts);
+          },
+          err => {
+            console.log("Within Catch of .then()");
+          },
+        )
+        .then(() => console.log("Third .then() - success"))
+        .catch(err => {
+          console.log("Within Catch method - Error !");
+          console.log(err);
+        });
+    </script>
+  </head>
+  <body></body>
+</html>
